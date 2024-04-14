@@ -29,6 +29,18 @@ public class MiddleOfTheLinkedList876 {
         return head;
     }
 
+
+    public static ListNode middleNode2(ListNode head) {
+        ListNode middle = head;
+
+        while(head != null && head.next != null) {
+            head = head.next.next;
+            middle = middle.next;
+        }
+
+        return middle;
+    }
+
     public static void main(String[] args) {
 
         ListNode n1 = new ListNode(6);
@@ -38,7 +50,7 @@ public class MiddleOfTheLinkedList876 {
         ListNode n5 = new ListNode(2, n4);
         ListNode n6 = new ListNode(1, n5);
 
-        ListNode node = middleNode(n5);
+        ListNode node = middleNode2(n5);
 
         System.out.println(node.val);
         while(node.next != null) {
